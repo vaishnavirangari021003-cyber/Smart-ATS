@@ -1,0 +1,613 @@
+/* =====================================================================
+   HireFlow Page-Specific Styles
+===================================================================== */
+
+/* ---------------------------------------------------------------------
+   1. Public Landing & Job Board (index.html, job-details.html)
+--------------------------------------------------------------------- */
+.hero-section {
+  background: linear-gradient(135deg, var(--navy) 0%, #172a54 100%);
+  color: #ffffff;
+  padding: var(--space-16) 0 var(--space-12);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-headline {
+  font-size: var(--font-size-3xl);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: var(--space-4);
+  line-height: 1.15;
+}
+
+.hero-subhead {
+  font-size: var(--font-size-md);
+  color: var(--navy-muted);
+  max-width: 680px;
+  margin: 0 auto var(--space-8);
+}
+
+.hero-search-box {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2);
+  box-shadow: var(--shadow-xl);
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .hero-search-box {
+    flex-direction: row;
+    align-items: center;
+    padding: var(--space-3);
+  }
+}
+
+.search-field-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+  padding: 0 var(--space-2);
+}
+
+.search-field-group svg {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.search-field-group input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: var(--font-size-base);
+  color: var(--text);
+  background: transparent;
+}
+
+.search-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--border);
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .search-divider {
+    display: block;
+  }
+}
+
+/* Stats Strip */
+.stats-strip {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-8) 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-item-number {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  font-family: var(--font-heading);
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.stat-item-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Job Directory Layout */
+.jobs-page-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  margin: var(--space-8) 0;
+}
+
+@media (min-width: 1024px) {
+  .jobs-page-layout {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+.filter-sidebar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  height: fit-content;
+}
+
+.job-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.job-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.job-card-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.job-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.job-card-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.job-card-salary {
+  font-weight: 700;
+  color: var(--success);
+  font-size: var(--font-size-sm);
+}
+
+/* Job Details Page */
+.job-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  margin: var(--space-8) 0;
+}
+
+@media (min-width: 1024px) {
+  .job-detail-grid {
+    grid-template-columns: 1fr 380px;
+  }
+}
+
+.apply-card {
+  position: sticky;
+  top: 90px;
+}
+
+/* ---------------------------------------------------------------------
+   2. Auth Pages (login.html, register.html)
+--------------------------------------------------------------------- */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--surface);
+}
+
+.auth-panel-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-8) var(--space-6);
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.auth-panel-brand {
+  flex: 1;
+  background: linear-gradient(135deg, var(--navy) 0%, #172a54 100%);
+  color: #ffffff;
+  padding: var(--space-12);
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 1024px) {
+  .auth-panel-brand {
+    display: flex;
+  }
+}
+
+/* Demo account quick login chips */
+.demo-accounts-card {
+  background: var(--surface-2);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.demo-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.demo-chip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.demo-chip:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Password live strength meter */
+.password-strength-meter {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.password-strength-bar {
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.password-strength-bar.weak { width: 33%; background: var(--danger); }
+.password-strength-bar.medium { width: 66%; background: var(--warning); }
+.password-strength-bar.strong { width: 100%; background: var(--success); }
+
+.caps-warning {
+  font-size: var(--font-size-xs);
+  color: var(--warning);
+  display: none;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+/* ---------------------------------------------------------------------
+   3. Pipeline Kanban Board (hr/pipeline.html)
+--------------------------------------------------------------------- */
+.kanban-board {
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  padding-bottom: var(--space-6);
+  min-height: calc(100vh - 240px);
+  align-items: flex-start;
+}
+
+.kanban-column {
+  width: 320px;
+  flex-shrink: 0;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 240px);
+}
+
+.kanban-column-header {
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid transparent;
+}
+
+.kanban-column[data-stage="Applied"] .kanban-column-header { border-bottom-color: var(--stage-applied); }
+.kanban-column[data-stage="Screening"] .kanban-column-header { border-bottom-color: var(--stage-screening); }
+.kanban-column[data-stage="Interview"] .kanban-column-header { border-bottom-color: var(--stage-interview); }
+.kanban-column[data-stage="Selected"] .kanban-column-header { border-bottom-color: var(--stage-selected); }
+.kanban-column[data-stage="Offered"] .kanban-column-header { border-bottom-color: var(--stage-offered); }
+.kanban-column[data-stage="Rejected"] .kanban-column-header { border-bottom-color: var(--stage-rejected); }
+
+.kanban-column-title {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text);
+}
+
+.kanban-column-count {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  color: var(--text-muted);
+}
+
+.kanban-card-list {
+  padding: var(--space-3);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+  min-height: 120px;
+  transition: background-color var(--transition-fast);
+}
+
+.kanban-card-list.drag-over {
+  background-color: var(--primary-soft);
+  outline: 2px dashed var(--primary);
+  outline-offset: -2px;
+}
+
+.kanban-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+  cursor: grab;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  user-select: none;
+}
+
+.kanban-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.kanban-card.is-dragging {
+  opacity: 0.45;
+  cursor: grabbing;
+}
+
+.kanban-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.kanban-card-title {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.kanban-card-job {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.kanban-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.days-in-stage-badge {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  font-weight: 600;
+}
+
+.days-in-stage-badge.stale {
+  background: var(--danger-soft);
+  color: var(--danger);
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------
+   4. Calendar Views (hr/interviews.html)
+--------------------------------------------------------------------- */
+.calendar-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.calendar-header {
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calendar-month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-collapse: collapse;
+}
+
+.calendar-day-header {
+  padding: var(--space-3);
+  text-align: center;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+.calendar-day-header:last-child {
+  border-right: none;
+}
+
+.calendar-cell {
+  min-height: 110px;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  padding: var(--space-2);
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.calendar-cell:nth-child(7n) {
+  border-right: none;
+}
+
+.calendar-cell.other-month {
+  background: var(--surface-2);
+  opacity: 0.5;
+}
+
+.calendar-cell.is-today {
+  background: var(--primary-soft);
+}
+
+.calendar-cell-date {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.calendar-event-chip {
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  background: var(--primary-soft);
+  color: var(--primary);
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  display: block;
+}
+
+.calendar-event-chip.scheduled { background: var(--primary-soft); color: var(--primary); }
+.calendar-event-chip.completed { background: var(--success-soft); color: var(--success-text); }
+.calendar-event-chip.cancelled { background: var(--danger-soft); color: var(--danger-text); }
+.calendar-event-chip.rescheduled { background: var(--warning-soft); color: var(--warning-text); }
+
+/* ---------------------------------------------------------------------
+   5. Analytics Charts Layout (hr/analytics.html)
+--------------------------------------------------------------------- */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .charts-grid-2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.chart-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.chart-canvas-container {
+  width: 100%;
+  height: 280px;
+  position: relative;
+}
+
+/* Profile Completion Ring */
+.completion-ring-container {
+  position: relative;
+  width: 90px;
+  height: 90px;
+}
+
+.completion-ring-container svg {
+  transform: rotate(-90deg);
+}
+
+.completion-ring-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-md);
+  font-weight: 800;
+  font-family: var(--font-heading);
+  color: var(--primary);
+}
+
+/* ---------------------------------------------------------------------
+   6. Error Pages (403.html, 404.html)
+--------------------------------------------------------------------- */
+.error-page-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-8);
+}
+
+.error-code {
+  font-size: 6rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}

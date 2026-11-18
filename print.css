@@ -1,0 +1,91 @@
+/* =====================================================================
+   HireFlow Print Stylesheet (print.css)
+   Optimized for clean A4 Offer Letter generation & document printouts
+===================================================================== */
+
+@media print {
+  /* Hide UI chrome, navigation, buttons and banners */
+  .demo-banner,
+  .navbar-public,
+  .app-sidebar,
+  .app-topbar,
+  .sidebar-backdrop,
+  .btn,
+  .page-actions,
+  .tabs,
+  .toast-container,
+  .modal-backdrop,
+  .drawer-backdrop,
+  .drawer,
+  .skip-link,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset layout for print */
+  body, html {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .app-layout, .app-main, .app-content {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Page setup: A4 with standard 20mm margins */
+  @page {
+    size: A4;
+    margin: 20mm;
+  }
+
+  /* Offer Letter document styling */
+  .printable-offer-container {
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    color: #111827 !important;
+  }
+
+  .print-letterhead {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #1f2937;
+    padding-bottom: 12pt;
+    margin-bottom: 24pt;
+  }
+
+  .print-letterhead h1 {
+    font-size: 20pt !important;
+    color: #111827 !important;
+    margin: 0 !important;
+  }
+
+  .print-signature-section {
+    margin-top: 48pt;
+    display: flex !important;
+    justify-content: space-between;
+    page-break-inside: avoid;
+  }
+
+  .signature-block {
+    width: 45%;
+    border-top: 1px solid #9ca3af;
+    padding-top: 6pt;
+    font-size: 10pt;
+    color: #4b5563;
+  }
+
+  a[href]::after {
+    content: "" !important; /* Don't display link destinations in print */
+  }
+}

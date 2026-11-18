@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+  <title>Sign In | HireFlow ATS</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <main id="main-content" class="auth-page">
+    <!-- Left: Form Panel -->
+    <div class="auth-panel-form">
+      <div style="margin-bottom: var(--space-6);">
+        <a href="index.html" class="brand-link" style="margin-bottom: var(--space-4);">
+          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#4F46E5"/><path d="M12 28V12L20 20L28 12V28" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="20" r="2.5" fill="#FFFFFF"/></svg>
+          <span>HireFlow</span>
+        </a>
+        <h1 style="font-size: var(--font-size-2xl); margin-bottom: var(--space-2);">Welcome Back</h1>
+        <p class="text-sm text-muted">Sign in to access your recruitment pipeline or application portal.</p>
+      </div>
+
+      <!-- Lockout Alert Area -->
+      <div id="lockout-alert" class="error-state" style="display: none; padding: var(--space-4); margin-bottom: var(--space-4);">
+        <div class="error-state-title" style="font-size: 13px;">Security Notice</div>
+        <p id="lockout-text" style="font-size: 12px; margin: 0;"></p>
+      </div>
+
+      <form id="login-form" novalidate>
+        <!-- Email Input -->
+        <div class="form-group">
+          <label class="form-label" for="login-email">
+            Email Address
+            <span class="required-indicator">*</span>
+          </label>
+          <input type="email" id="login-email" class="form-control" placeholder="name@example.com" required autocomplete="username">
+          <div class="form-error"></div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="form-group">
+          <label class="form-label" for="login-password">
+            Password
+            <span class="required-indicator">*</span>
+          </label>
+          <div class="input-with-action">
+            <input type="password" id="login-password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+            <button type="button" class="btn-action" id="btn-toggle-pwd" aria-label="Show password">
+              <svg id="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+          </div>
+          <div class="caps-warning" id="caps-lock-warning">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            <span>Caps Lock is ON</span>
+          </div>
+          <div class="form-error"></div>
+        </div>
+
+        <!-- Remember Me Checkbox -->
+        <div class="flex justify-between items-center" style="margin-bottom: var(--space-4);">
+          <label class="form-check" style="margin: 0;">
+            <input type="checkbox" id="remember-me" class="form-check-input">
+            <span class="form-check-label text-sm">Remember me (7 days)</span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="btn-submit-login" class="btn btn-primary btn-lg w-full">Sign In</button>
+      </form>
+
+      <!-- Demo Accounts Chip Section -->
+      <div class="demo-accounts-card">
+        <div class="text-xs font-bold" style="text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 4px;">
+          Demo Quick Fill Accounts (Pass: Demo@1234)
+        </div>
+        <p class="text-xs text-muted" style="margin-bottom: var(--space-2);">Click any account chip below to auto-populate credentials:</p>
+        <div class="demo-chip-group">
+          <button type="button" class="demo-chip" data-fill-email="admin@example.com" data-fill-pass="Demo@1234">
+            🔑 Admin (Full Control)
+          </button>
+          <button type="button" class="demo-chip" data-fill-email="hr@example.com" data-fill-pass="Demo@1234">
+            💼 HR Specialist (Pipeline & Offers)
+          </button>
+          <button type="button" class="demo-chip" data-fill-email="candidate@example.com" data-fill-pass="Demo@1234">
+            👤 Candidate (Applications & Profile)
+          </button>
+        </div>
+      </div>
+
+      <div class="text-center text-sm text-muted" style="margin-top: var(--space-6);">
+        Don't have an account yet? <a href="register.html" class="font-semibold">Create Candidate Account</a>
+      </div>
+    </div>
+
+    <!-- Right: Brand Hero Panel -->
+    <div class="auth-panel-brand">
+      <div class="flex items-center gap-2">
+        <svg viewBox="0 0 40 40" width="32" height="32" fill="none"><rect width="40" height="40" rx="10" fill="#4F46E5"/><path d="M12 28V12L20 20L28 12V28" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="20" r="2.5" fill="#FFFFFF"/></svg>
+        <span style="font-size: 1.25rem; font-weight: 800; color: #ffffff;">HireFlow</span>
+      </div>
+
+      <div>
+        <h2 style="font-size: 2.25rem; color: #ffffff; margin-bottom: var(--space-4); line-height: 1.2;">
+          Modern Hiring, Elevated.
+        </h2>
+        <p style="color: var(--navy-muted); font-size: 1.125rem; line-height: 1.6; max-width: 480px;">
+          Streamline recruiting workflows from sourcing to digital offer letters with full auditability, zero latency, and clear timelines.
+        </p>
+      </div>
+
+      <div style="font-size: 0.875rem; color: var(--navy-muted);">
+        Acme Innovations Recruitment Suite • Demo Environment
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/pages/login.page.js"></script>
+</body>
+</html>

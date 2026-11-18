@@ -1,0 +1,99 @@
+:root {
+  font-family: Inter, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  color: #e5f0ff;
+  background: #08111f;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at top, rgba(76, 132, 255, 0.32), transparent 30%),
+    linear-gradient(180deg, #08111f 0%, #111a2a 100%);
+}
+
+.app-shell {
+  width: min(100%, 720px);
+  padding: 2rem;
+}
+
+.card {
+  background: rgba(14, 24, 39, 0.75);
+  border: 1px solid rgba(136, 176, 255, 0.22);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 18px 40px rgba(3, 8, 15, 0.35);
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8ab4ff;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.subtitle {
+  margin: 0.75rem 0 1.5rem;
+  color: #c6d9ff;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.status.loading {
+  background: rgba(255, 187, 76, 0.12);
+  border-color: rgba(255, 187, 76, 0.35);
+  color: #ffc857;
+}
+
+.status.ok {
+  background: rgba(26, 214, 142, 0.12);
+  border-color: rgba(26, 214, 142, 0.35);
+  color: #8af0be;
+}
+
+.status.error {
+  background: rgba(255, 91, 91, 0.12);
+  border-color: rgba(255, 91, 91, 0.35);
+  color: #ff9a9a;
+}
+
+.dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: currentColor;
+  display: inline-block;
+}
+
+.message {
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+  color: #dfeaff;
+}
